@@ -1,0 +1,135 @@
+/* Navbar */
+
+.navBar {
+  height: 55px;
+  width: 100%;
+  background-color: aliceblue;
+  border: 1px solid rgb(218, 206, 206);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.BrandName {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0 0 0 50px;
+  color: rgb(182, 3, 63);
+  cursor: pointer;
+}
+
+.navBar .search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 36px;
+  width: 27rem;
+  border: 2px solid blue;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 10px;
+  padding: 0;
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+}
+
+.searchInput {
+  border: 0px;
+  height: 100%;
+  width: 100%;
+  padding: 0 2px 0 15px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ion-icon {
+  margin: 0 10px 0 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.searchRecommendationBox {
+  max-height: 10rem;
+  min-height: 100%;
+  width: 27rem;
+  overflow-y: scroll;
+}
+
+.searchRecommendationBox li {
+  border: 2px solid rgb(238, 125, 26);
+  margin: 0.6rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-radius: 5px;
+  height: 40px;
+}
+
+.searchRecommendationBox li .item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 38px;
+  border-radius: 5px;
+}
+
+.searchRecommendationBox img {
+  border: 1px solid red;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.searchRecommendationBox .Username {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.navBar .userMenu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 45px;
+  min-width: 10rem;
+  max-width: 100%;
+}
+
+.navBar .userMenu-container .userDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navBar .userMenu-container .username {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.navBar .userMenu-container .Img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  margin-right: 50px;
+  cursor: pointer;
+}

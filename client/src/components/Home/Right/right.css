@@ -1,0 +1,105 @@
+.rightSection {
+  max-height: 32.2rem;
+  width: 20.2rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.rightSection .adSection img {
+  margin: 1rem 0;
+  background-color: rgb(205, 201, 201);
+  height: 7.5rem;
+  width: 18rem;
+}
+
+.rightSection .UserFriends {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(213, 211, 211);
+  height: 21.5rem;
+  width: 18rem;
+  margin-bottom: 1rem;
+}
+
+.rightSection .UserFriends .MenuBar {
+  border: 2px solid blue;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 66px;
+  width: 18rem;
+  background-color: rgb(176, 189, 195);
+}
+
+.rightSection .UserFriends .MenuBar .sec1,
+.sec2,
+.sec3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: aquamarine;
+  border: 2px solid red;
+  margin: 0px 5px;
+  padding: 4px 5px;
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* FriendsList */
+
+.list-container {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  /* border: 1px solid royalblue; */
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  cursor: all-scroll;
+}
+
+.list-container .list {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid red;
+  background-color: rgb(243, 224, 205);
+  height: 3rem;
+  margin: 0.6rem 0.5rem;
+  width: 17rem;
+  padding: 5px;
+}
+
+.list-container .list .userImgList {
+  border: 1px solid red;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.list-container .list .UserDetailsList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 13.5rem;
+}
+
+.list-container .list .UserDetailsList .UsernameList {
+  border: 1px solid red;
+  background-color: aliceblue;
+  border-radius: 5px;
+  padding: 2px 5px;
+  width: 100%;
+  margin-right: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}

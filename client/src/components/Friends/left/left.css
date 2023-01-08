@@ -1,0 +1,131 @@
+.left-container {
+  height: 32.2rem;
+  width: 22rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  /* border: 2px solid red; */
+  padding: 1rem;
+}
+
+.left-container .FriendsDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 15rem;
+  margin-bottom: 0.7rem;
+  width: 20rem;
+  background-color: rgb(225, 221, 219);
+}
+
+.left-container .FriendsDetails .details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 12.4rem;
+  width: 20rem;
+  background-color: rgb(174, 172, 171);
+}
+
+.left-container .FriendsDetails .friendIMG,
+.friendDetailView {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 12.4rem;
+  width: 10rem;
+  padding: 0;
+}
+
+.left-container .FriendsDetails .userIMGF {
+  border: 1px solid rgb(1, 100, 73);
+  height: 12.4rem;
+  width: 10rem;
+}
+
+.left-container .FriendsDetails .friendName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 20rem;
+  font-size: 15px;
+  font-weight: 500;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.left-container .FriendsDetails .friendDetailView .follow,
+.following,
+.post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(3, 2, 78);
+  height: 53px;
+  width: 6rem;
+  margin: 0.3rem;
+  border-radius: 10px;
+}
+
+.left-container .FriendsDetails .friendDetailView .name {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.left-container .FriendsDetails .friendDetailView .value {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.left-container .FriendsPersonalDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  height: 13rem;
+  width: 20rem;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.left-container .friendDetailsDisplay {
+  height: 50px;
+  width: 20rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: aquamarine;
+}
+
+
+.left-container .FriendsPersonalDetails .personalData {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+  max-height: 100%;
+  width: 20rem;
+  margin: 0.5rem 0;
+  border-radius: 10px;
+  background-color: rgb(222, 232, 232);
+  font-weight: 500;
+  overflow: hidden;
+}
+
+.left-container .friendDetailsDisplay .text {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.left-container .friendDetailsDisplay .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}

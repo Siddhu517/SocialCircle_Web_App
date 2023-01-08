@@ -1,0 +1,89 @@
+.post-container {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  max-height: 32.2rem;
+  width: 39rem;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  cursor: move;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 0 1.2rem;
+}
+
+.post-uploadSection {
+  border: 1px solid blue;
+  background-color: #fff;
+  margin: 10px 0;
+  width: 100%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* section-3 */
+
+.post-container .posts .postView {
+  max-height: 110rem; /* post height  */
+  min-height: 100%;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+/* sextion 1 */
+
+.section-1 {
+  padding: 10px;
+}
+
+.userImage {
+  border-radius: 50%;
+  height: 37px;
+  width: 37px;
+  margin-right: 10px;
+}
+
+.TextInputBox {
+  height: 37px;
+  width: 28rem;
+  border: 1px solid red;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+
+.section-2 {
+  border-top: 3px solid rgb(224, 226, 226);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 7px 0;
+}
+
+.section2-1 .section2-01 {
+  height: 40px;
+  width: 100%;
+  padding: 2px 30px;
+  background-color: antiquewhite;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: small;
+  font-weight: 500;
+}
+

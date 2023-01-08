@@ -1,0 +1,18 @@
+.friends-container {
+  height: 100%;
+  width: 100%;
+  background-color: #002853;
+}
+
+.friends-container .friendSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  height: 32.2rem;
+}
+
+.friends-container .ViewSection{
+  border: 2px solid red;
+  height:32.2rem;
+  width: 100%;
+}

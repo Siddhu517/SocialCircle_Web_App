@@ -1,0 +1,63 @@
+.leftSection {
+  height: 32.2rem;
+  width: 20.2rem;
+}
+
+.leftSection .userDetails {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  height: 22rem;
+  margin: 1rem 1rem 0 1rem;
+  width: 18rem;
+  background-color: rgb(213, 212, 212);
+}
+
+.leftSection .userDetails .UserName {
+  border: 3px dashed rgb(255, 0, 8);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 4rem;
+  padding: 1px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:0.2rem 0;
+  width: 17rem;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.leftSection .userImgView {
+  height: 14rem;
+  width: 13rem;
+  margin: 1rem 1rem 0 1rem;
+}
+
+.leftSection .userVisuals {
+  height: 5.5rem;
+  width: 18.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.leftSection .userDetailsVisual1,
+.userDetailsVisual2 {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  height: 3.9rem;
+  width: 5.6rem;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.leftSection .adSection img{
+  background-color: rgb(239, 219, 192);
+  margin: 1rem;
+  height: 7rem;
+  width: 18rem;
+}

@@ -1,0 +1,233 @@
+.profilepage {
+  height: 100%;
+  width: 100%;
+}
+
+.profilepage .profileSections {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  background-color: rgb(1, 47, 87);
+}
+
+.profilepage .profileSections .profileLeft {
+  height: 30rem;
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  justify-content: start;
+  align-items: center;
+  /*  border: 1px solid red; */
+  background-color: rgb(229, 225, 225);
+  margin: 1rem;
+}
+
+.profilepage .backImg {
+  /*   border: 1px solid red; */
+  background-color: aliceblue;
+  border-radius: 10px;
+  position: relative;
+  top: -3rem;
+  left: 15rem;
+  height: 100%;
+  width: 5rem;
+  padding: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profilepage .profileSections .profileLeft .editImg {
+  border: 3px solid red;
+  border-radius: 5px;
+  height: 2.5rem;
+  margin: 1rem;
+  width: 16rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(240, 162, 60);
+}
+
+.profilepage .profileSections .profileLeft .editImg ion-icon {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-self: center;
+  padding: 6px;
+}
+
+.profilepage .profileSections .profileLeft .UserprofileImg {
+  /* border: 1px solid red; */
+  margin: 1rem;
+  height: 15rem;
+  width: 14rem;
+}
+
+.profilepage .profileSections .profileMain {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  height: 32.2rem;
+  width: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.profilepage .profileSections .profileMain {
+  background-color: antiquewhite;
+  border: 1px solid blue;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.profilepage .profileSections .profileMain .userBackgroungIMG {
+  /*  border: 1px solid red; */
+  height: 13rem !important;
+  width: 100%;
+}
+
+.profilepage .profileSections .profileMain .userDetailsEdit {
+  margin-top: -2.5rem;
+  height: 30rem;
+  width: 100%;
+}
+
+.profilepage .profileSections .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profilepage .profileSections .form .passwordSec {
+  height: 30px;
+  width: 14rem;
+  border: 1px solid rgb(190, 186, 186);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: rgb(254, 254, 254);
+  border-radius: 5px;
+  padding-top: 2px;
+}
+
+.profilepage .profileSections .formSection {
+  display: flex;
+}
+
+.profilepage .profileSections .formSection .formSec1,
+.formSec2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  /* border: 1px solid blue; */
+  height: 25rem;
+  width: 100%;
+  padding: 1rem;
+}
+
+.profilepage .profileSections .formSection .inputForm {
+  height: 30px;
+  width: 14rem;
+}
+
+.profilepage .profileSections .formSection label {
+  font-size: 14px;
+}
+
+.profilepage .profileSections .formSection .labelAddr {
+  display: flex;
+  margin-left: -11rem;
+}
+
+.profilepage .profileSections .formSection .address {
+  height: 5.7rem;
+  width: 15rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -2px;
+  margin-left: 12px;
+  /*  border: 1px solid red; */
+}
+
+.profilepage .profileSections .selectForm,
+select {
+  height: 35px;
+  width: 14rem;
+}
+
+.profilepage .profileSections .formSection .addr {
+  height: 30px;
+  width: 7.1rem;
+  margin: 2px;
+}
+
+.profilepage .profileSections .profileRight {
+  /*  border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  height: 30rem;
+  width: 34rem;
+  margin: 1rem;
+  background-color: rgb(180, 179, 178);
+}
+
+.profileRight .userPersonalDetails {
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.profileRight .userPersonalDetails .detailBox {
+  height: 4.2rem;
+  background-color: bisque;
+  border-radius: 5px;
+  width: 15.8rem;
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem 0;
+  padding-bottom: 5px;
+}
+
+.profileRight .userPersonalDetails .detailBox .name {
+  display: flex;
+  align-self: flex-start;
+  overflow: hidden;
+  font-weight: 500;
+  padding: 5px 5px 5px 10px;
+}
+
+.profileRight .userPersonalDetails .detailBox .detail {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  overflow: hidden;
+  min-height: 30px;
+  max-height: 100%;
+  flex-wrap: wrap;
+  width: 15rem;
+  font-size: 13px;
+  font-weight: 500;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid red;
+  padding: 2px 7px;
+  border-radius: 10px;
+  padding-bottom: 5px;
+}

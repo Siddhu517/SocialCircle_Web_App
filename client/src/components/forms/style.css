@@ -1,0 +1,30 @@
+.formLogin,
+.formRegister,
+.formReset-password {
+/*  margin-right: 20rem; */
+  border-top-left-radius: 45px;
+  border-bottom-left-radius: 45px;
+  border-top-right-radius: 45px;
+  border-bottom-right-radius: 45px;
+}
+
+.formLogin {
+  border: 1px solid red;
+  margin-top: 5rem;
+  padding: 2rem 3rem 0rem 3rem;
+  width: 25rem;
+}
+
+.formRegister {
+    margin-top: 0.7rem;
+  border: 1px solid blue;
+  padding: 1.5rem 3rem 0 3rem;
+  width: 25rem;
+}
+
+.formReset-password {
+    margin-top: 5rem;
+  border: 1px solid rgb(239, 30, 205);
+  padding: 2rem 3rem;
+  width: 25rem;
+}

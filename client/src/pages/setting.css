@@ -1,0 +1,61 @@
+.settings-container{
+    height: 100%;
+    width: 100%;
+  }
+  
+.settings-container .settingSection{
+ /*    border: 1px solid rgb(255, 0, 200); */
+    height: 32.2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    background-color: rgb(1, 47, 87);
+  }
+  
+  .settings-container .settingSection .menuSection{
+    /*  border: 1px solid red; */
+    border-right:2px solid red;
+     height:32.2rem;
+     width: 22rem;
+     display: flex;
+     flex-direction: column;
+     justify-content: start;
+     align-items: center;
+  }
+
+  .settings-container .settingSection .menuSection .Name{
+      background-color: rgb(149, 173, 66);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      height: 3rem;
+      width: 13rem;
+      border: 4px solid red;
+      margin: 0.7rem 0;
+      font-size: 25px;
+      font-weight: 500;
+      cursor: pointer;
+  }
+
+  .settings-container .settingSection .menuSection .Menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    height: 2.5rem;
+    width: 12rem;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0.5rem 0;
+    cursor: pointer;
+  }
+
+
+  .settings-container .settingSection .viewSection{
+  /*   border: 2px solid rgb(255, 0, 157); */
+    height:32.2rem;
+    width: 100%;
+  }

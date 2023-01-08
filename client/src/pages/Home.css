@@ -1,0 +1,40 @@
+.Home-Container {
+  height: 100%;
+  width: 100%;
+}
+
+.container-display {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+}
+
+.filterModal .modal {
+  height: 27rem !important;
+}
+
+.filterModal .modal-dialog .modal-content {
+  background-color: transparent;
+  height: 20rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.filterModal .modal-dialog .modal-content .modal-body {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  width: 55rem;
+  background-color: rgb(101, 101, 102);
+}
+
+.filterModal .modal .modal-content button {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: rgb(251, 251, 251);
+  font-size: 20px;
+}
+
+

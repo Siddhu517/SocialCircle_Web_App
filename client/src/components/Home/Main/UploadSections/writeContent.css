@@ -1,0 +1,52 @@
+.createPost {
+  padding-top: 50px;
+}
+
+.createPost .modal-dialog {
+  width: 30rem !important;
+}
+
+.createPost .modal-header {
+  height: 3.2rem;
+}
+
+.createPost.closeButton {
+  background-color: rgb(192, 195, 195);
+  border-radius: 50%;
+}
+
+.createPost .dropdownButton {
+  background-color: rgb(201, 202, 204);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-top: 5px;
+}
+
+.createPost .backgroundChange {
+  border: 1px solid rgb(168, 165, 165);
+  margin: 10px -16px -16px -16px;
+  padding: 10px 0;
+}
+
+.createPost .writeText {
+  border: 0.5px solid rgb(144, 142, 142);
+  margin: 15px 0;
+  border: 1px solid red;
+  height: 12rem;
+  width: 29.8rem;
+}
+
+.createPost .cardBodyC {
+  height:10.7rem;
+  width: 27rem;
+}
+
+.createPost .reactQuill {
+  height: 6rem;
+}
+
+.createPost .modal-footer {
+  height: 4.2rem;
+}

@@ -1,0 +1,118 @@
+/* AddVideos Component */
+
+.AddVideos .modal-dialog {
+  width: 30rem !important;
+}
+
+.AddVideos .modal-header {
+  height: 3.2rem;
+}
+
+.AddVideos .closeButton {
+  background-color: rgb(192, 195, 195);
+  border-radius: 50%;
+}
+
+.AddVideos .dropdownButton {
+  background-color: rgb(201, 202, 204);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-top: 5px;
+}
+
+.AddVideos .addCard {
+  min-height: 100%;
+  max-height: 20.8rem;
+  border: 3px solid;
+  padding: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.AddVideos .textAreaCard .card-body {
+  height:10.7rem;
+  width: 27rem;
+}
+
+.AddVideos .textAreaCard .card-body .reactQuill {
+  height: 6rem;
+}
+
+
+
+.AddVideos .addCardContent {
+  background-color: rgb(193, 194, 196);
+  height: 9rem;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.AddVideos .addCardContent .iconADD {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background-color: rgb(153, 155, 157);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.AddVideos .addCardContent .iconADD ion-icon {
+  font-size: 25px;
+}
+
+.AddVideos .addCardContent .midText {
+  font-weight: 600;
+  font-size: 19px;
+}
+
+.AddVideos .addCardContent .smallText {
+  font-size: 14px;
+}
+
+.AddVideos .main {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.AddVideos .main .resetButton {
+  display: flex;
+  margin: 0.5rem;
+}
+
+.AddVideos .main .videosPreview {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.AddVideos .modal-footer {
+  height: 4.2rem;
+}
+
+/* Videos Component */
+
+.videos {
+  margin: 0.5rem;
+  overflow-x: scroll;
+  max-height: 10rem;
+  max-width: 23rem;
+  min-height: 100%;
+  min-width: 100%;
+  scroll-behavior: smooth;
+}
+
+.videos video {
+  border: 1px solid rgb(111, 2, 69);
+  margin: 4px;
+  height: 5rem;
+  width: 7rem;
+}

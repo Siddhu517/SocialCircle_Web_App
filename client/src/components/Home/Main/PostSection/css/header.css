@@ -1,0 +1,96 @@
+/* Card Header Section */
+
+.card-header {
+  min-height: 5rem;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card-header .card-sec1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header .UserName {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header .UserName .userIMG {
+  height: 37px;
+  width: 37px;
+  border-radius: 50%;
+  background-color: blue;
+  margin: 1px 10px 1px 0;
+}
+
+.card-header .UserName .User {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+}
+
+.card-header .UserName .User .name {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.card-header .UserName .userNameSub {
+  margin-top: -4px;
+  display: flex;
+  align-self: flex-start;
+}
+
+.card-header .Edit {
+  display: flex;
+  align-self: start;
+}
+
+.card-header .Edit .editIcon ion-icon {
+  display: flex;
+  align-items: center;
+
+  font-size: 22px;
+}
+
+.card-header .Edit .deleteIcon ion-icon {
+  display: flex;
+  align-items: center;
+
+  font-size: 22px;
+}
+
+.card-header .Edit .moreIcon ion-icon {
+  display: flex;
+  margin-right: -10px;
+  align-items: center;
+  font-size: 22px;
+}
+
+.card-header .card-sec2 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.card-header .card-sec2 .Inner {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  overflow-y: hidden;
+}
+
+.card-header .card-sec2 .more {
+  display: flex;
+  align-self: flex-end;
+}

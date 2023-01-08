@@ -1,0 +1,121 @@
+.AddImages .modal-dialog {
+  width: 30rem !important;
+}
+
+.AddImages .modal-header {
+  height: 3.2rem;
+}
+
+.AddImages .closeButton {
+  background-color: rgb(192, 195, 195);
+  border-radius: 50%;
+}
+
+.AddImages .dropdownButton {
+  background-color: rgb(201, 202, 204);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-top: 5px;
+}
+
+.AddImages .addCard {
+  min-height: 100%;
+  max-height: 20.8rem;
+  border: 3px solid;
+  padding: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.AddImages .textAreaCard .card-body {
+  height:10.7rem;
+  width: 27rem;
+}
+
+.AddImages .textAreaCard .card-body .reactQuill {
+  height: 6rem;
+}
+
+.AddImages .addCardContent {
+  background-color: rgb(193, 194, 196);
+  height: 9rem;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.AddImages .addCardContent .iconADD {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background-color: rgb(153, 155, 157);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.AddImages .addCardContent .iconADD ion-icon {
+  font-size: 25px;
+}
+
+.AddImages .addCardContent .midText {
+  font-weight: 600;
+  font-size: 19px;
+}
+
+.AddImages .addCardContent .smallText {
+  font-size: 14px;
+}
+
+.AddImages .main {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.AddImages .main .resetButton {
+  display: flex;
+  margin: 0.5rem;
+}
+
+.AddImages .main .imagesPreview {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.AddImages .modal-footer {
+  height: 4.2rem;
+}
+
+/* images component */
+
+.images {
+  margin: 0.5rem;
+  overflow-x: scroll;
+  max-height: 10rem;
+  max-width: 23rem;
+  min-height: 100%;
+  min-width: 100%;
+  scroll-behavior: smooth;
+}
+
+.images img {
+  border: 1px solid rgb(111, 2, 69);
+  margin: 4px;
+  height: 5rem;
+  width: 7rem;
+}
+
+
+.AddImages .viewImage{
+  border: 1px solid red;
+  height: 100%;
+  width: 100%;
+}

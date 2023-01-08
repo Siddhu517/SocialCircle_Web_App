@@ -1,0 +1,221 @@
+/* card footer */
+
+.card-footer .footerSec1 {
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-footer .like,
+.comments,
+.share {
+  border: 0.5px solid rgb(192, 189, 189);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+.card-footer ion-icon {
+  font-size: 20px;
+}
+
+/* section 2 comment section */
+
+.card-footer .PostComments {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(225, 222, 222);
+  min-height: 100%;
+  max-height: 28rem;
+  border: 1px solid rgb(139, 139, 139);
+}
+
+.card-footer .PostComments .writeComment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  width: 90%;
+  margin: 10px;
+  display: flex;
+  align-self: center;
+}
+
+.card-footer .PostComments ul {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  background-color: rgb(190, 189, 187);
+}
+
+.commentsSection li {
+  margin: 15px 0;
+}
+
+.PostComments .userComment {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: bisque;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid red;
+  width: 31rem;
+}
+
+.PostComments .userComment .userIMGC {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: rgb(186, 36, 36);
+  margin: 10px;
+  display: flex;
+  align-self: flex-start;
+  border: 1px solid blue;
+}
+
+.PostComments .userComment .CommentSec {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  width: 22rem;
+}
+
+.PostComments .userComment .comment {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: flex-start;
+  background-color: rgb(255, 255, 255);
+  font-size: 14px;
+  margin: 10px 0;
+  padding: 5px 5px 5px 15px;
+  border-radius: 10px;
+  width: 25rem;
+  min-height: 50px;
+  max-height: 100%;
+}
+
+.PostComments .userComment .handleComment {
+  align-self: flex-start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 4rem;
+  margin-right: 1rem;
+}
+
+.PostComments .userComment .handleComment ion-icon {
+  font-size: 18px;
+}
+
+.PostComments .userComment .editCommentBox {
+  width: 25rem;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.PostComments .userComment .editCommentBox .editComment {
+  font-size: 14px;
+}
+
+/* share-Modal */
+
+/* .sharemodal .modal{
+} */
+
+.sharemodal .modal-body {
+  border: 1px solid red;
+  min-height: 100%;
+  max-height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.sharemodal .menu-container {
+  border: 1px solid rgb(0, 255, 8);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 10px 0;
+}
+
+.sharemodal .menu-container .tabs {
+  border: 1px solid rgb(176, 239, 15);
+  height: 40px;
+  padding: 7px 15px;
+  background-color: rgb(246, 94, 104);
+  border-radius: 10px;
+}
+
+.sharemodal .friendsList {
+  border: 1px solid red;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+}
+
+.sharemodal .friendsList .card{
+  border: 1px solid rgb(136, 0, 255);
+  height: 50px;
+  width: 22rem;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.sharemodal .friendsList .card img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  color: red;
+  cursor: pointer;
+  margin-left:-20px;
+}
+
+.sharemodal .friendsList .card .user {
+  border: 1px solid red;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-radius: 10px;
+  padding: 5px 10px;
+  width: 14rem;
+  background-color: rgb(246, 235, 220);
+  color: rgb(24, 0, 179);
+  cursor: pointer;
+}
+
+.sharemodal .friendsList .card input {
+  margin: 10px;
+  height: 24px;
+  width: 24px;
+}
+

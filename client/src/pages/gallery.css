@@ -1,0 +1,146 @@
+.gallerySection {
+  /* border:5px solid red; */
+  height: 100%;
+  width: 100%;
+}
+
+.gallerySection .gallerySectionBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 32.2rem;
+  width: 100%;
+}
+
+.gallerySection .gallerySectionBox .galleryMenu {
+  background-color: rgb(0, 0, 62);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 15rem;
+  height: 100%;
+}
+
+.gallerySection .gallerySectionBox .viewSection {
+  background-color: rgb(0, 0, 62);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 32.2rem;
+}
+
+/* menu */
+
+.gallerySection .gallerySectionBox .galleryMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.gallerySection .gallerySectionBox .galleryMenu .name {
+  border: 7px solid rgb(245, 119, 9);
+  height: 3.5rem;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 2rem 0;
+}
+
+.gallerySection .gallerySectionBox .galleryMenu .menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(170, 171, 172);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.gallerySection .gallerySectionBox .galleryMenu .menu span {
+  border: 4px solid rgb(205, 219, 20);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  height: 2.5rem;
+  width: 12rem;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0px 1rem;
+}
+
+/* display section */
+
+.gallerySection .gallerySectionBox .galleryViewSec {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: start;
+  padding: 0.5rem;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  cursor: all-scroll;
+  justify-content: center;
+}
+
+/* videos */
+.gallerySection .gallerySectionBox .galleryViewSec .Video {
+  height: 29.2rem;
+  width: 50rem;
+  margin: 1rem 4rem;
+  background-color: rgb(214, 204, 204);
+  cursor: pointer;
+}
+
+/* images */
+.gallerySection .gallerySectionBox .galleryViewSec .Images {
+  /*  border: 1px solid red; */
+  height: 29.2rem;
+  width: 50rem;
+  margin: 1rem 4rem;
+  background-color: rgb(214, 204, 204);
+  cursor: pointer;
+}
+
+/* docs */
+.gallerySection .gallerySectionBox .galleryViewSec .Docs {
+  /* border: 1px solid red; */
+  height: 32rem;
+  width: 47rem;
+  margin: 0 4rem 2rem 4rem;
+  background-color: rgb(214, 204, 204);
+  cursor: pointer;
+}
+
+/* back images */
+.gallerySection .gallerySectionBox .galleryViewSec .BackImages {
+  /* border: 1px solid red; */
+  height: 29.2rem;
+  width: 50rem;
+  margin: 1rem 4rem;
+  background-color: rgb(214, 204, 204);
+  cursor: pointer;
+}
+
+/* profile images */
+.gallerySection .gallerySectionBox .galleryViewSec .ProfileImages {
+  /* border: 1px solid red; */
+  height: 29.2rem;
+  width: 32rem;
+  margin: 1rem 4rem;
+  background-color: rgb(214, 204, 204);
+  cursor: pointer;
+}
