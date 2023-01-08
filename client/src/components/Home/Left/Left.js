@@ -11,7 +11,7 @@ const Left = () => {
         <img
           className="userImgView"
           src={`${
-            state && state.user.image
+            state && state.user && state.user.image
               ? state.user.image.url
               : "https://i0.wp.com/nybreaking.com/wp-content/uploads/2022/12/Lensa-AI-apps-Ts-and-Cs-allow-it-to-distribute.jpg"
           }`}

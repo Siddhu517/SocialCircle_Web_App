@@ -40,7 +40,11 @@ const Main = ({
             <div className=" section-1 d-flex justify-content-between align-items-center">
               <img
                 className=" userImage img-fluid"
-                src={state && state.user.image ? state.user.image.url : ""}
+                src={
+                  state && state.user && state.user.image
+                    ? state.user.image.url
+                    : ""
+                }
                 alt=""
                 style={{ cursor: "pointer" }}
               />
