@@ -18,7 +18,11 @@ const Left = () => {
           alt=""
         />
         <span className="UserName">
-          -_@{state && state.user.username ? state.user.username : "User"}@_-
+          -_@
+          {state && state.user && state.user.username
+            ? state.user.username
+            : "User"}
+          @_-
         </span>
 
         <div className="userVisuals">
