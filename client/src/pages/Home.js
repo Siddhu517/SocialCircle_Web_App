@@ -138,8 +138,9 @@ const Home = () => {
 
   const handleCreatePost = async (data) => {
     const res = await createPost(data);
-    handleNewsFeedAPI();
     handleUpdateStateUser();
+    handleNewsFeedAPI();
+    return res;
   };
 
   const handleDeletePostAPI = async (id, fileType) => {

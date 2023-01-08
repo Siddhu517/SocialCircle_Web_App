@@ -4,11 +4,11 @@ import AWS from "aws-sdk";
 import fs from "fs";
 
 // Set the AWS access key ID, secret access key, region, and endpoint
-const accessKeyId = process.env.CLOUD_AWS_ACCESS_KEY_ID;
-const secretAccessKey = process.env.CLOUD_AWS_SECRET_ACCESS_KEY;
+const accessKeyId = process.env.AWS_ACCESS_KEY_ID;
+const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
 const region = "ap-south-1"; // Set the region code of the S3 bucket
 const endpoint = new AWS.Endpoint(`s3.${region}.amazonaws.com`);
-const s3AccelerateEndpoint = process.env.CLOUD_AWS_S3_ACCELERATE_END_POINT;
+const s3AccelerateEndpoint = process.env.AWS_S3_ACCELERATE_END_POINT;
 
 // Update the AWS SDK configuration
 AWS.config.update({

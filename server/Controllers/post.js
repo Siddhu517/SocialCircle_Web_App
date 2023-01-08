@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 export const createPost = async (req, res) => {
   try {
     const { content, resFiles, file_type, bodyText, postBy } = req.body;
-    //console.log(content, resFiles, file_type, bodyText, postBy);
+    // console.log(content, resFiles, file_type, bodyText, postBy);
 
     if (!content) {
       return res.json({
@@ -88,13 +88,13 @@ export const createPost = async (req, res) => {
       { new: true }
     );
 
-    const postData = await Post.findById(post._id).populate(
+    const postWithUser = await Post.findById(post._id).populate(
       "postedBy",
       "-password"
     );
 
     res.json({
-      postData,
+      data: postWithUser,
       status: "ok",
       message: "Successfully Post Created",
     });
