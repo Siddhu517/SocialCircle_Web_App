@@ -42,8 +42,8 @@ const Home = () => {
 
   useEffect(() => {
     if (state && state.token) {
-      handleNewsFeedAPI();
       handleUpdateStateUser();
+      handleNewsFeedAPI();
     }
   }, [state && state.token]);
 

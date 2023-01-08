@@ -29,7 +29,7 @@ const Left = () => {
           <div className="userDetailsVisual1 bg-info">
             <span className="text-light h6">Follow</span>
             <span className="fs-6">
-              {state && state.user.followers
+              {state && state.user && state.user.followers
                 ? state.user.followers.length
                 : "0"}
             </span>
@@ -38,13 +38,15 @@ const Left = () => {
             <span className="text-light h6">Post</span>
             <span className="fs-6">
               {" "}
-              {state && state.user.posts ? state.user.posts.length : "0"}
+              {state && state.user && state.user.posts
+                ? state.user.posts.length
+                : "0"}
             </span>
           </div>
           <div className="userDetailsVisual2 bg-warning">
             <span className="text-light h6">Following</span>
             <span className="fs-6">
-              {state && state.user.following
+              {state && state.user && state.user.following
                 ? state.user.following.length
                 : "0"}
             </span>
