@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: start;
-  max-height: 32.2rem;
+  max-height: 690px;
   width: 39rem;
   overflow-y: scroll;
   scroll-behavior: smooth;

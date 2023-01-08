@@ -8,11 +8,11 @@
   display: flex;
   justify-content: space-between;
   align-items: start;
-  height: 32.2rem;
+  height: 690px;
 }
 
 .friends-container .ViewSection{
   border: 2px solid red;
-  height:32.2rem;
+  height: 690px;
   width: 100%;
 }

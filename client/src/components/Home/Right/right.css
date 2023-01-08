@@ -1,6 +1,7 @@
 .rightSection {
-  max-height: 32.2rem;
+  height: 32.2rem;
   width: 20.2rem;
+  margin-right: 0.4rem;
   display: flex;
   justify-content: start;
   align-items: center;
