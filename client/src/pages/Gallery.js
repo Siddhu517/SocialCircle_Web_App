@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef } from "react";
 import Navbar from "../components/Home/Navbar/Navbar";
 import "./gallery.css";
 import {
@@ -66,6 +66,12 @@ const Gallery = () => {
 
     setPosts(documents);
   };
+
+  const videoRef = useRef(null);
+
+  function handleClick() {
+    videoRef.current.pause();
+  }
 
   return (
     <div className="gallerySection">
@@ -139,19 +145,16 @@ const Gallery = () => {
               {post &&
                 post.map((video, index) => (
                   <div className="card Video">
-                    <iframe
-                      className=" img-fluid m-0 p-0 d-block w-100 h-100"
-                      src={video.url}
-                      title={video.public_id}
-                      frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      muted
-                      key={index}
-                      autoPlay={false}
-                    >
-                      Your browser does not support the video tag.
-                    </iframe>
+                   <video
+                  ref={videoRef}
+                  className="video img-fluid d-block w-100 h-100"
+                  src={video.url}
+                  title={video.public_id}
+                  controls
+                  onClick={handleClick}
+                >
+                  Your browser does not support the video tag.
+                </video>
                   </div>
                 ))}
             </div>

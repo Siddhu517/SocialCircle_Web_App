@@ -27,7 +27,11 @@ const Profile = () => {
 
   const handleUpdateStateUser = async () => {
     const { data } = await currentUser();
-    await stateUpdate(data);
+    let auth = JSON.parse(localStorage.getItem("auth"));
+    auth.user = data.user;
+    localStorage.setItem("auth", JSON.stringify(auth));
+    //update Context
+    setState({ ...state, user: data.user });
   };
 
   /* user image upload */
@@ -40,16 +44,6 @@ const Profile = () => {
   const [files, setFiles] = useState([]);
 
   const [isLoading, setIsLoading] = useState(false);
-
-  const stateUpdate = async (data) => {
-    let auth = JSON.parse(localStorage.getItem("auth"));
-    auth.user = data.user;
-    localStorage.setItem("auth", JSON.stringify(auth));
-    //update Context
-    setState({ ...state, user: data.user });
-    var res = "stateUpdated";
-    return res;
-  };
 
   const [update, setUpdate] = useState({
     username: "",
@@ -92,7 +86,9 @@ const Profile = () => {
         toast.error(resUpdate.error);
         return;
       }
-      await stateUpdate(resUpdate.data);
+      await handleUpdateStateUser();
+      setPasswordValidate("");
+      setConfirmPassword("");
       toast.success(resUpdate.data.message);
 
       setIsLoading(false);
@@ -218,8 +214,8 @@ const Profile = () => {
 
       const { data } = await profileImageUpdate(formData);
       //console.log("data =>", data);
-      await stateUpdate(data);
       if (data.status === "ok") {
+        await handleUpdateStateUser();
         setIsLoading(false);
         setUpload(false);
         toast.success(data.message);
@@ -246,8 +242,8 @@ const Profile = () => {
 
       const { data } = await profileBackImageUpdate(formData);
 
-      await stateUpdate(data);
       if (data.status === "ok") {
+        await handleUpdateStateUser();
         setLoading(false);
         setUploadBack(false);
         toast.success(data.message);

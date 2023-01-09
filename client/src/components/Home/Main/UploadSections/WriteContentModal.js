@@ -57,6 +57,13 @@ const WriteContentModal = ({ id, handleCreatePost }) => {
     }
   };
 
+  const closeUploading = () => {
+    setIsLoading(false);
+    setBodyText("");
+    setContent("");
+    setPostBy("");
+  };
+
   return (
     <div>
       {/* Modal */}
@@ -133,7 +140,7 @@ const WriteContentModal = ({ id, handleCreatePost }) => {
               </div>
             </div>
             <div className="modal-footer d-flex justify-content-center align-items-center">
-              <button
+              {/*  <button
                 onClick={SubmitPostServer}
                 className="btn btn-primary w-100"
                 type="button"
@@ -147,7 +154,31 @@ const WriteContentModal = ({ id, handleCreatePost }) => {
                   ></span>
                 ) : null}
                 Post
-              </button>
+              </button> */}
+              <div class="btn-group w-100">
+                <button
+                  onClick={SubmitPostServer}
+                  className="btn btn-primary w-100"
+                  type="button"
+                  disabled={isLoading}
+                >
+                  {isLoading ? (
+                    <span
+                      className="spinner-border spinner-border-sm me-3 fs-4"
+                      role="status"
+                      aria-hidden="true"
+                    ></span>
+                  ) : null}
+                  Post
+                </button>
+                <span
+                  onClick={closeUploading}
+                  className="btn btn-danger w-25 "
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </span>
+              </div>
             </div>
           </div>
         </div>

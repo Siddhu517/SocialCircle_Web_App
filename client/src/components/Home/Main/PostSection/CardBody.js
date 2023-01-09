@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useRef } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "./css/body.css";
 import { renderHTML } from "../../../../utils/renderHTML";
 
-const CardBody = ({ post}) => {
+const CardBody = ({ post }) => {
+  const videoRef = useRef(null);
+
+  function handleClick() {
+    videoRef.current.pause();
+  }
   return (
     <div className="card-body postBodySection m-0 p-0">
       <div className="carousel-container">
@@ -24,19 +29,16 @@ const CardBody = ({ post}) => {
           <Carousel fade className="carousel-inner" interval={null}>
             {post.videos.map((video, index) => (
               <Carousel.Item>
-                <iframe
+                <video
+                  ref={videoRef}
                   className="video img-fluid d-block w-100 h-100"
                   src={video.url}
                   title={video.public_id}
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  autoPlay={false}
-                  muted
-                  key={index}
+                  controls
+                  onClick={handleClick}
                 >
                   Your browser does not support the video tag.
-                </iframe>
+                </video>
               </Carousel.Item>
             ))}
           </Carousel>

@@ -40,16 +40,19 @@ const Home = () => {
   const [following, setFollowing] = useState([]);
   const [suggested, setSuggested] = useState([]);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
+    const fetch = async () => {
+      await handleNewsFeedAPI();
+      await handleUpdateStateUser();
+    };
     if (state && state.token) {
-      handleUpdateStateUser();
-      handleNewsFeedAPI();
+      fetch();
     }
   }, [state && state.token]);
 
   /* Auth APIs  */
-
-  const navigate = useNavigate();
 
   const handleUpdateStateUser = async () => {
     try {
@@ -111,8 +114,9 @@ const Home = () => {
 
   const handleUserUnfollow = async (id) => {
     const res = await userUnfollow(id);
+   // handleUpdateStateUser();
+    handleNewsFeedAPI();
     handleUserFollowing();
-    handleUpdateStateUser();
     handleUserFollowers();
     handleFindPeople();
     return res;
@@ -138,8 +142,8 @@ const Home = () => {
 
   const handleCreatePost = async (data) => {
     const res = await createPost(data);
-    handleUpdateStateUser();
     handleNewsFeedAPI();
+    handleUpdateStateUser();
     return res;
   };
 
@@ -160,8 +164,10 @@ const Home = () => {
   /* all post fetch */
   const handleNewsFeedAPI = async () => {
     try {
-      handleUpdateStateUser();
+      await handleUpdateStateUser();
+      console.log("state => ", state.user._id);
       const { data } = await newsFeedAPI(state.user._id);
+      console.log(data);
       setPosts(data);
       return data;
     } catch (err) {
