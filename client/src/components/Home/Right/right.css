@@ -1,19 +1,21 @@
 .rightSection {
-  height: 32.2rem;
-  width: 20.2rem;
-  margin-right: 0.4rem;
+  position: fixed;
+  top: 55px;
+  margin: 1rem;
   display: flex;
   justify-content: start;
   align-items: center;
   flex-direction: column;
 }
 
+
 .rightSection .adSection img {
-  margin: 1rem 0;
   background-color: rgb(205, 201, 201);
   height: 7.5rem;
-  width: 18rem;
+  width: 17rem;
+  margin-bottom: 1rem;
 }
+
 
 .rightSection .UserFriends {
   display: flex;
@@ -21,18 +23,17 @@
   align-items: center;
   flex-direction: column;
   background-color: rgb(213, 211, 211);
-  height: 21.5rem;
-  width: 18rem;
-  margin-bottom: 1rem;
+  height: 21rem;
+  width: 17rem;
 }
 
 .rightSection .UserFriends .MenuBar {
-  border: 2px solid blue;
+  border: 1px solid blue;
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 66px;
-  width: 18rem;
+  width: 17rem;
   background-color: rgb(176, 189, 195);
 }
 
@@ -61,7 +62,7 @@
   align-items: start;
   /* border: 1px solid royalblue; */
   height: 100%;
-  width: 100%;
+  width: 17rem;
   overflow-y: scroll;
   scroll-behavior: smooth;
   cursor: all-scroll;

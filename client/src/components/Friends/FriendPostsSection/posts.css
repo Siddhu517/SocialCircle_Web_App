@@ -1,12 +1,15 @@
 .post-container-friend {
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 690px;
+  min-height: 690px;
+  max-height: 100%;
   width: 100%;
   overflow-y: scroll;
-  /*  border: 2px solid red; */
+  /* border: 2px solid red; */
+  cursor: all-scroll;
 }
 
 .post-container-friend .card {
@@ -83,8 +86,11 @@
 .post-container-friend .postBodySection {
   display: flex;
   justify-content: center;
-  height: 30rem;
+  align-items: center;
+  height: 100%;
   width: 32rem;
+  margin: 0;
+  padding: 10px 0 0 0;
 }
 
 .post-container-friend .postBodySection .carousel-container {
@@ -92,7 +98,7 @@
   height: 100%;
 }
 .post-container-friend .postBodySection .carousel-inner {
-  height: 24.6rem;
+  height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -106,34 +112,39 @@
   overflow-y: scroll;
 }
 
-.post-container-friend .postBodySection .carousel-control-prev,
-.carousel-control-next {
-  margin-top: 50%;
+.postBodySection .carousel-control-prev {
+  margin-left: 10px;
+  margin-top: 40%;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: white;
+
+  background-color: rgb(177, 175, 175);
   border: none;
   outline: none;
   cursor: pointer;
 }
 
-.post-container-friend .postBodySection .carousel-control-prev {
-  left: 10px;
+.postBodySection .carousel-control-next {
+  margin-right: 10px;
+  margin-top: 40%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(177, 175, 175);
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
-.post-container-friend .postBodySection .carousel-control-next {
-  right: 10px;
-}
-
-.post-container-friend .postBodySection .carousel-control-prev-icon,
+.postBodySection .carousel-control-prev-icon,
 .carousel-control-next-icon {
   width: 20px;
   height: 20px;
   background-color: transparent;
 }
 
-.post-container-friend .postBodySection .visually-hidden {
+.postBodySection .visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -146,12 +157,12 @@
   overflow: hidden;
 }
 
-.post-container-friend .postBodySection .carousel-control-prev:hover,
+.postBodySection .carousel-control-prev:hover,
 .carousel-control-next:hover {
   background-color: #eee;
 }
 
-.post-container-friend .postBodySection .carousel-control-prev:active,
+.postBodySection .carousel-control-prev:active,
 .carousel-control-next:active {
   background-color: #ddd;
 }

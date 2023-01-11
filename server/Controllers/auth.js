@@ -216,6 +216,8 @@ const generateOTP = () => {
   makeOTP = Math.floor(1000 + Math.random() * 9000);
 };
 
+/*  */
+
 // send OTP to specific email address
 const handleSendEmail = async (email, otp) => {
   let transporter = nodemailer.createTransport({
@@ -235,7 +237,80 @@ const handleSendEmail = async (email, otp) => {
     html: `<p>Your OTP is <strong>${otp}</strong></p>`,
   });
 
-  // console.log(`Message sent: %s `, info.messageId);
+ // console.log(`Message sent: %s `, info.messageId);
+};
+
+
+/* contact form submit */
+
+export const contactForm = async (req, res) => {
+  try {
+    // Get the form data from the request body
+    const { name, email, contact, message } = req.body;
+
+    // Check if any of the required fields are missing
+    if (!name || !email || !contact || !message) {
+      return res.json({
+        error: "All fields are required",
+      });
+    }
+
+    // Create a nodemailer transporter object using the Gmail service
+    let transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "siddhusadadekar517@gmail.com",
+        pass: "nuamefswphkmvszp",
+      },
+    });
+
+    // Send the email
+    let info = await transporter.sendMail({
+      from: email,
+      to: "siddhusadadekar517@gmail.com",
+      subject: "Contact Message",
+      text: name,
+      html: `<div><h3>Name: ${name}</h3></br><h4>UserId: ${req.user._id}</h4></br><h4>EmailSendUser: ${email}</h4></br><h4>Contact_No: ${contact}</h4></br><p><h4>Message:</h4> ${message}</p></div>`,
+    });
+
+    // Log the message ID
+    //console.log(`Message sent: %s `, info.messageId);
+
+    if (!info) {
+      return res.json({
+        message: "network error or check email id",
+      });
+    }
+
+    // Save the contact form data to a user's document in a MongoDB collection
+    console.log(req.user._id);
+    const user = await User.findByIdAndUpdate(
+      req.user._id,
+      {
+        $addToSet: {
+          contactUs: {
+            name: name,
+            email: email,
+            contact: contact,
+            message: message,
+          },
+        },
+      },
+      { new: true }
+    );
+
+    // Send a response indicating that the message was sent
+    res.json({
+      message: "message sent successfully",
+      status: "ok",
+    });
+  } catch (err) {
+    console.log(err);
+    res.json({
+      error:
+        "An error occured while sending the message, please try again later",
+    });
+  }
 };
 
 /* get current user */
@@ -244,7 +319,6 @@ export const currentUser = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
     res.json({ user: user });
-    //res.json({ ok: true });
   } catch (err) {
     console.log(err);
     res.sendStatus(400);
@@ -409,7 +483,7 @@ export const removeFollower = async (req, res, next) => {
 };
 
 export const userFollow = async (req, res) => {
-  console.log(req.body.id);
+  // console.log(req.body.id);
   try {
     const user = await User.findByIdAndUpdate(
       req.user._id,

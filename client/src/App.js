@@ -10,9 +10,11 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { UserProvider } from "./context/Context";
 import { Navigate } from "react-router-dom";
+import Contact from "./pages/Contact";
 
 function App() {
   const isAuth = Boolean(localStorage.getItem("auth"));
+  //const isAuth = true;
   return (
     <>
       <BrowserRouter>
@@ -40,6 +42,10 @@ function App() {
             <Route
               path="/gallery"
               element={isAuth ? <Gallery /> : <Navigate to="/" />}
+            />
+            <Route
+              path="/contact"
+              element={isAuth ? <Contact /> : <Navigate to="/" />}
             />
             <Route
               path="/friend/:username"

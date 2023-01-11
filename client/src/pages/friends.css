@@ -4,15 +4,25 @@
   background-color: #002853;
 }
 
-.friends-container .friendSection {
+.friends-container .LfriendSec {
   display: flex;
-  justify-content: space-between;
-  align-items: start;
-  height: 690px;
+  justify-content: center;
+  align-items: flex-start;
+  width: 17rem;
+  /* display: none; */
 }
-
-.friends-container .ViewSection{
-  border: 2px solid red;
-  height: 690px;
-  width: 100%;
+.friends-container .MfriendSec {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 40rem;
+  /* border: 1px solid rgb(0, 255, 30); */
+}
+.friends-container .RfriendSec {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+ /*  border: 1px solid rgb(255, 0, 195); */
+ width: 17rem;
+ /* display: none; */
 }

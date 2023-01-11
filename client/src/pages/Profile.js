@@ -257,9 +257,12 @@ const Profile = () => {
   };
 
   return (
-    <div className="profilepage container-fluid m-0 p-0">
-      <Navbar display="hidden" />
-      <div className="profileSections">
+    <div className="profilepage container-fluid">
+      <div className="row">
+        <Navbar display="hidden" />
+      </div>
+      <div className="row d-flex justify-content-center align-items-center">
+        <div className="col LProfile-Section">
         <div className="profileLeft">
           <img
             className="UserprofileImg img-fluid"
@@ -305,6 +308,8 @@ const Profile = () => {
             )}
           </div>
         </div>
+        </div>
+        <div className="col MProfile-Section">
         <div className="profileMain">
           <img
             className="userBackgroungIMG img-fluid"
@@ -316,6 +321,7 @@ const Profile = () => {
             alt=""
           />
           <span className="backImg">
+            <span class="h5">Update Profile:</span>
             <div className="editImg">
               {/* add files in input  */}
               <input
@@ -341,7 +347,7 @@ const Profile = () => {
                       aria-hidden="true"
                     ></span>
                   ) : null}
-                  Update
+                  Edit Image
                 </button>
               ) : (
                 <span
@@ -603,6 +609,8 @@ const Profile = () => {
             </form>
           </div>
         </div>
+        </div>
+        <div className="col RProfile-Section">
         {state && state.user ? (
           <>
             <div className="profileRight">
@@ -711,6 +719,7 @@ const Profile = () => {
         ) : (
           ""
         )}
+        </div>
       </div>
     </div>
   );

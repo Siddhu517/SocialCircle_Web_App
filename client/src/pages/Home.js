@@ -114,7 +114,7 @@ const Home = () => {
 
   const handleUserUnfollow = async (id) => {
     const res = await userUnfollow(id);
-   // handleUpdateStateUser();
+    // handleUpdateStateUser();
     handleNewsFeedAPI();
     handleUserFollowing();
     handleUserFollowers();
@@ -262,38 +262,47 @@ const Home = () => {
 
   return (
     <div
-      className="container-fluid m-0 p-0 Home-Container"
+      className="container-fluid Home-Container"
       style={{ backgroundColor: "#002853" }}
     >
-      <Navbar />
-
-      <div className="container-display">
-        <Left />
-        <Main
-          posts={posts}
-          handleUserFollowing={handleUserFollowing}
-          handleCreatePost={handleCreatePost}
-          handleDeletePostAPI={handleDeletePostAPI}
-          handleCreateCommentAPI={handleCreateCommentAPI}
-          handleDeleteCommentAPI={handleDeleteCommentAPI}
-          handleCommentEditAPI={handleCommentEditAPI}
-          handleLikePostAPI={handleLikePostAPI}
-          handleUnlikePostAPI={handleUnlikePostAPI}
-          handleSharePostAPI={handleSharePostAPI}
-        />
-        <Right
-          handleFindPeople={handleFindPeople}
-          handleUserFollowers={handleUserFollowers}
-          handleUserFollowing={handleUserFollowing}
-          handleAddFollowers={handleAddFollowers}
-          handleRemoveFollower={handleRemoveFollower}
-          handleUserFollow={handleUserFollow}
-          handleUserUnfollow={handleUserUnfollow}
-          followers={followers}
-          following={following}
-          suggested={suggested}
-        />
+      <div className="row d-flex justify-content-center align-items-center">
+        <Navbar />
       </div>
+
+      <div className="row d-flex justify-content-center align-items-center">
+        <div className="col Left-container" >
+          <Left />
+        </div>
+        <div className="col Main-container">
+          <Main
+            posts={posts}
+            handleUserFollowing={handleUserFollowing}
+            handleCreatePost={handleCreatePost}
+            handleDeletePostAPI={handleDeletePostAPI}
+            handleCreateCommentAPI={handleCreateCommentAPI}
+            handleDeleteCommentAPI={handleDeleteCommentAPI}
+            handleCommentEditAPI={handleCommentEditAPI}
+            handleLikePostAPI={handleLikePostAPI}
+            handleUnlikePostAPI={handleUnlikePostAPI}
+            handleSharePostAPI={handleSharePostAPI}
+          />
+        </div>
+        <div className="col Right-container">
+          <Right
+            handleFindPeople={handleFindPeople}
+            handleUserFollowers={handleUserFollowers}
+            handleUserFollowing={handleUserFollowing}
+            handleAddFollowers={handleAddFollowers}
+            handleRemoveFollower={handleRemoveFollower}
+            handleUserFollow={handleUserFollow}
+            handleUserUnfollow={handleUserUnfollow}
+            followers={followers}
+            following={following}
+            suggested={suggested}
+          />
+        </div>
+      </div>
+     
     </div>
   );
 };

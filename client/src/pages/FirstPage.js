@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AuthForm from "../components/forms/AuthForm";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import {
   RegisterAPI,
@@ -15,6 +15,8 @@ const FirstPage = () => {
 
   const [display, setDisplay] = useState(false);
 
+  const [isLoading, setIsLoading] = useState(false);
+
   // handle otp add
   const [enterOTP, setEnterOTP] = useState("");
 
@@ -22,7 +24,6 @@ const FirstPage = () => {
     user: {},
     token: "",
   });
-
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.substr(1);
@@ -66,9 +67,9 @@ const FirstPage = () => {
     });
   };
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsLoading(true);
     if (page === "Register") {
       handleRegister();
     } else if (page === "Login") {
@@ -102,24 +103,31 @@ const FirstPage = () => {
         !dateofbirth
       ) {
         toast.error("Do not skip any field");
+        setIsLoading(false);
         return;
       }
 
       if (password.length < 6) {
         toast.error("Password is should be 6 characters long");
+        setIsLoading(false);
         return;
       }
 
       const res = await RegisterAPI(registerData);
-      
+
       if (res.data.status === "ok") {
         toast.success(res.data.message);
-        setPage("Login");
+        setTimeout(() => {
+          setIsLoading(false);
+          setPage("Login");
+        }, 3000);
       } else {
         toast.error(res.data.error);
+        setIsLoading(false);
         setPage("Register");
       }
     } catch (err) {
+      setIsLoading(false);
       toast.error("Retry check network connection");
     }
   };
@@ -131,18 +139,19 @@ const FirstPage = () => {
 
       if (!username) {
         toast.error("Enter Email or Username");
+        setIsLoading(false);
         return;
       }
 
       if (!password || password.length < 6) {
         toast.error("Enter password and min 6 char");
+        setIsLoading(false);
         return;
       }
 
       const res = await LoginAPI(loginData);
       if (res.data.status === "ok") {
         toast.success(res.data.message);
-      
 
         setState({
           user: res.data.user,
@@ -153,11 +162,17 @@ const FirstPage = () => {
         window.localStorage.setItem("auth", JSON.stringify(res.data));
 
         // navigate home page
-        window.location = "/";
+
+        setTimeout(() => {
+          setIsLoading(false);
+          window.location = "/";
+        }, 3000);
       } else {
+        setIsLoading(false);
         toast.error(res.data.error);
       }
     } catch (err) {
+      setIsLoading(false);
       toast.error("username or password incorrect");
     }
   };
@@ -224,27 +239,33 @@ const FirstPage = () => {
     try {
       const ResetData = { email, password };
       if (!password || password.length < 6) {
+        setIsLoading(false);
         toast.error("Enter password min 6 char");
         return;
       }
       if (!confirmPassword || confirmPassword.length < 6) {
+        setIsLoading(false);
         toast.error("Enter confirmPassword min 6 char");
         return;
       }
 
       if (password !== confirmPassword) {
+        setIsLoading(false);
         toast.error("password and confirmPassword not match retry");
         return;
       }
 
       const res = await ResetPassword(ResetData);
       if (res.data.status === "ok") {
+        setIsLoading(false);
         toast.success(res.data.message);
         setPage("Login");
       } else {
+        setIsLoading(false);
         toast.error(res.data.error);
       }
     } catch (err) {
+      setIsLoading(false);
       toast.error("check internet connection");
     }
   };
@@ -295,6 +316,7 @@ const FirstPage = () => {
       <div className="d-flex justify-content-center align-items-center">
         <span className="d-flex align-self-start mt-4 me-5 h2">{page}</span>
         <AuthForm
+          isLoading={isLoading}
           page={page}
           setPage={setPage}
           formData={formData}

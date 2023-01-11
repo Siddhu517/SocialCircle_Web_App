@@ -27,7 +27,7 @@ const Left = () => {
 
         <div className="userVisuals">
           <div className="userDetailsVisual1 bg-info">
-            <span className="text-light h6">Follow</span>
+            <span className="text-light">Follow</span>
             <span className="fs-6">
               {state && state.user && state.user.followers
                 ? state.user.followers.length
@@ -35,7 +35,7 @@ const Left = () => {
             </span>
           </div>
           <div className="userDetailsVisual1 bg-danger">
-            <span className="text-light h6">Post</span>
+            <span className="text-light">Post</span>
             <span className="fs-6">
               {" "}
               {state && state.user && state.user.posts
@@ -44,7 +44,7 @@ const Left = () => {
             </span>
           </div>
           <div className="userDetailsVisual2 bg-warning">
-            <span className="text-light h6">Following</span>
+            <span className="text-light">Following</span>
             <span className="fs-6">
               {state && state.user && state.user.following
                 ? state.user.following.length

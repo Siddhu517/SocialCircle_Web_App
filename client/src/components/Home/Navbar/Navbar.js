@@ -142,6 +142,11 @@ const Navbar = ({ display }) => {
               </Link>
             </li>
             <li>
+              <Link to="/contact" className="dropdown-item">
+                Contact Us
+              </Link>
+            </li>
+            <li>
               <Link to="" className="dropdown-item" onClick={handleLogout}>
                 LogOut
               </Link>

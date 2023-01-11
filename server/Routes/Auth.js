@@ -28,6 +28,7 @@ import {
   friendFollowers,
   friendFollowing,
   findPeopleFriend,
+  contactForm,
 } from "../Controllers/auth";
 
 router.post("/register", register);
@@ -57,5 +58,8 @@ router.get("/friend-details/:username", requireSignin, friendDetails);
 router.get("/friend-followers/:username", requireSignin, friendFollowers);
 router.get("/friend-following/:username", requireSignin, friendFollowing);
 router.get("/find-people/:username", requireSignin, findPeopleFriend);
+
+/* contact us form */
+router.post("/contact", requireSignin, contactForm);
 
 export default router;

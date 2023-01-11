@@ -1,111 +1,120 @@
 .profilepage {
   height: 100%;
   width: 100%;
-}
-
-.profilepage .profileSections {
-  display: flex;
-  justify-content: space-around;
-  align-items: start;
   background-color: rgb(1, 47, 87);
 }
 
-.profilepage .profileSections .profileLeft {
-  height: 30rem;
-  width: 18rem;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  justify-content: start;
-  align-items: center;
-  /*  border: 1px solid red; */
-  background-color: rgb(229, 225, 225);
-  margin: 1rem;
-}
-
-.profilepage .backImg {
-  /*   border: 1px solid red; */
-  background-color: aliceblue;
-  border-radius: 10px;
-  position: relative;
-  top: -3rem;
-  left: 15rem;
-  height: 100%;
-  width: 5rem;
-  padding: 7px;
+.profilepage .LProfile-Section {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  width: 17rem;
+  /* display: none; */
+}
+.profilepage .MProfile-Section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 40rem;
+/*   border: 2px solid red; */
+}
+.profilepage .RProfile-Section {
+  /* border: 1px solid rgb(255, 0, 225); */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 17rem;
+  /*  display: none; */
 }
 
-.profilepage .profileSections .profileLeft .editImg {
+/* profile Left-section */
+
+.profilepage .profileLeft {
+  position: fixed;
+  top: 55px;
+  height: 22rem;
+  width: 16rem;
+  background-color: rgb(229, 225, 225);
+  margin: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profilepage .profileLeft .editImg {
   border: 3px solid red;
   border-radius: 5px;
   height: 2.5rem;
   margin: 1rem;
-  width: 16rem;
+  width: 15rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: rgb(240, 162, 60);
 }
 
-.profilepage .profileSections .profileLeft .editImg ion-icon {
+.profilepage .profileLeft .editImg ion-icon {
   height: 30px;
   width: 30px;
-  border-radius: 50%;
   display: flex;
   align-self: center;
-  padding: 6px;
+  justify-content: center;
+  align-items: center;
 }
 
-.profilepage .profileSections .profileLeft .UserprofileImg {
-  /* border: 1px solid red; */
+.profilepage .profileLeft .UserprofileImg {
+  border: 1px solid red;
   margin: 1rem;
   height: 15rem;
   width: 14rem;
 }
 
-.profilepage .profileSections .profileMain {
-  border: 1px solid red;
+/* main */
+
+.profilepage .profileMain {
+  margin-top: 55px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
-  height: 700px;
-  width: 100%;
+  align-items: center;
+  min-height: 700px;
+  max-height: 100%;
+  width: 40rem;
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
 
-.profilepage .profileSections .profileMain {
-  background-color: antiquewhite;
-  border: 1px solid blue;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-}
-
-.profilepage .profileSections .profileMain .userBackgroungIMG {
-  /*  border: 1px solid red; */
-  height: 13rem !important;
+.profilepage .profileMain .userBackgroungIMG {
+  height: 15rem !important;
   width: 100%;
 }
 
-.profilepage .profileSections .profileMain .userDetailsEdit {
-  margin-top: -2.5rem;
+/* edit block back img */
+
+.profilepage .backImg {
+  background-color: bisque;
+  width: 100%;
+  display: flex;
+  justify-content:space-between;
+  padding: 1rem;
+}
+
+.profilepage .profileMain .userDetailsEdit {
+  margin-top:-1rem;
   height: 30rem;
   width: 100%;
+  background-color: bisque;
 }
 
-.profilepage .profileSections .form {
+.profilepage .form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.profilepage .profileSections .form .passwordSec {
+.profilepage .form .passwordSec {
   height: 30px;
   width: 14rem;
   border: 1px solid rgb(190, 186, 186);
@@ -117,11 +126,11 @@
   padding-top: 2px;
 }
 
-.profilepage .profileSections .formSection {
+.profilepage .formSection {
   display: flex;
 }
 
-.profilepage .profileSections .formSection .formSec1,
+.profilepage .formSection .formSec1,
 .formSec2 {
   display: flex;
   flex-direction: column;
@@ -133,21 +142,21 @@
   padding: 1rem;
 }
 
-.profilepage .profileSections .formSection .inputForm {
+.profilepage .formSection .inputForm {
   height: 30px;
   width: 14rem;
 }
 
-.profilepage .profileSections .formSection label {
+.profilepage .formSection label {
   font-size: 14px;
 }
 
-.profilepage .profileSections .formSection .labelAddr {
+.profilepage .formSection .labelAddr {
   display: flex;
   margin-left: -11rem;
 }
 
-.profilepage .profileSections .formSection .address {
+.profilepage .formSection .address {
   height: 5.7rem;
   width: 15rem;
   display: flex;
@@ -157,25 +166,29 @@
   /*  border: 1px solid red; */
 }
 
-.profilepage .profileSections .selectForm,
+.profilepage .selectForm,
 select {
   height: 35px;
   width: 14rem;
 }
 
-.profilepage .profileSections .formSection .addr {
+.profilepage .formSection .addr {
   height: 30px;
   width: 7.1rem;
   margin: 2px;
 }
 
-.profilepage .profileSections .profileRight {
-  /*  border: 1px solid red; */
+/* profile right section */
+
+.profilepage .profileRight {
+  position: fixed;
+  top: 55px;
+  border: 1px solid red;
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   height: 30rem;
-  width: 34rem;
+  width: 17rem;
   margin: 1rem;
   background-color: rgb(180, 179, 178);
 }

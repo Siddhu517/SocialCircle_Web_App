@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./posts.css";
 import Carousel from "react-bootstrap/Carousel";
 import { renderHTML } from "../../../utils/renderHTML";
 
 const Posts = ({ posts }) => {
+  const videoRef = useRef(null);
+
+  function handleClick() {
+    videoRef.current.pause();
+  }
   return (
     <div className="post-container-friend">
       {posts &&
@@ -32,7 +37,7 @@ const Posts = ({ posts }) => {
                   </div>
                 </div>
               </div>
-              <div className="card-body postBodySection m-0 p-0">
+              <div className="card-body postBodySection">
                 <div className="carousel-container">
                   {post.file_type === "image" ? (
                     <Carousel fade className="carousel-inner" interval={null}>
@@ -51,19 +56,16 @@ const Posts = ({ posts }) => {
                     <Carousel fade className="carousel-inner" interval={null}>
                       {post.videos.map((video, index) => (
                         <Carousel.Item>
-                          <iframe
+                          <video
+                            ref={videoRef}
                             className="video img-fluid d-block w-100 h-100"
                             src={video.url}
                             title={video.public_id}
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                            autoPlay={false}
-                            muted
-                            key={index}
+                            controls
+                            onClick={handleClick}
                           >
                             Your browser does not support the video tag.
-                          </iframe>
+                          </video>
                         </Carousel.Item>
                       ))}
                     </Carousel>

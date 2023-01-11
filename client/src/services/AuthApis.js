@@ -194,13 +194,30 @@ export const findPeopleFriend = async (username) => {
   }
 };
 
-
-
 /* search user recommendation */
 /* Navbar */
 export const searchUser = async (searchData) => {
   try {
     return await axios.post(`/search-user`, searchData);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+/* contact us form */
+
+export const contactFormSubmit = async (formData) => {
+  try {
+    return await axios.post(`/contact`, formData);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+/* gallery file delete */
+export const gallerydeleteFile = async (fileId, fileType) => {
+  try {
+    return await axios.delete(`/gallery/delete-file`, { fileId, fileType });
   } catch (err) {
     console.log(err);
   }

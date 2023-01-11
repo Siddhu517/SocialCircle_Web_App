@@ -109,8 +109,13 @@ export const createPost = async (req, res) => {
 export const newsFeed = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
-    let following = user.following;
-    following.push(req.user._id);
+    let following;
+    if (user.following) {
+      following = user.following;
+      following.push(req.user._id);
+    } else {
+      following = user;
+    }
 
     //const posts = await Post.find({})
     const posts = await Post.find({ postedBy: { $in: following } })

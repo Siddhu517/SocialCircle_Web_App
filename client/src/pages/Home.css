@@ -1,40 +1,36 @@
 .Home-Container {
   height: 100%;
   width: 100%;
+  /*   border: 3px solid red; */
 }
 
-.container-display {
+/* Media query for devices with a width of 1024px or more */
+@media screen and (min-width: 1024px) {
+  .Home-Container .Right-container {
+    display: none;
+  }
+}
+
+/* Default styles for all containers */
+.Home-Container .Left-container {
+  /* border: 1px solid red; */
   display: flex;
-  justify-content: space-around;
-  align-items: start;
+  justify-content: center;
+  align-items: flex-start;
+  width: 17rem;
 }
-
-.filterModal .modal {
-  height: 27rem !important;
-}
-
-.filterModal .modal-dialog .modal-content {
-  background-color: transparent;
-  height: 20rem;
+.Home-Container .Main-container {
+  /*  border: 1px solid rgb(187, 255, 0); */
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
+  width: 40rem;
 }
-
-.filterModal .modal-dialog .modal-content .modal-body {
-  border: 1px solid red;
+.Home-Container .Right-container {
+  /*  border: 2px solid rgb(255, 0, 225); */
   display: flex;
-  flex-direction: column;
-  width: 55rem;
-  background-color: rgb(101, 101, 102);
+  justify-content: center;
+  align-items: flex-start;
+  width: 17rem;
+  /* display: none; */
 }
-
-.filterModal .modal .modal-content button {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  background-color: rgb(251, 251, 251);
-  font-size: 20px;
-}
-
-

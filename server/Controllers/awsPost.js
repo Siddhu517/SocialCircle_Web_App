@@ -6,16 +6,14 @@ import fs from "fs";
 // Set the AWS access key ID, secret access key, region, and endpoint
 const accessKeyId = process.env.AWS_ACCESS_KEY_ID;
 const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
-const region = "ap-south-1"; // Set the region code of the S3 bucket
-const endpoint = new AWS.Endpoint(`s3.${region}.amazonaws.com`);
+const region = process.env.AWS_S3_REGION; // Set the region code of the S3 bucket
 const s3AccelerateEndpoint = process.env.AWS_S3_ACCELERATE_END_POINT;
 
 // Update the AWS SDK configuration
 AWS.config.update({
   accessKeyId,
   secretAccessKey,
-  region, // Set the region
-  endpoint, // Set the endpoint
+  region,
   s3AccelerateEndpoint,
 });
 
@@ -24,7 +22,6 @@ const s3 = new AWS.S3();
 
 // The name of the bucket that you want to upload the files to
 //const bucketName = process.env.BUCKET_NAME;
-const bucketName = "socialcircle";
 
 /* profile image update */
 export const profileImageUpdate = async (req, res) => {
@@ -49,7 +46,7 @@ export const profileImageUpdate = async (req, res) => {
 
     // Set the bucket and file names for the S3 upload
     const params = {
-      Bucket: bucketName,
+      Bucket: process.env.BUCKET_NAME,
       Key: `ProfileImage/${date.toISOString()}-${file.name}`, // fix: use file.name instead of files.name
       Body: fileBuffer,
       ContentType: file.mimetype, // fix: use file.mimetype instead of files.mimetype
@@ -57,9 +54,6 @@ export const profileImageUpdate = async (req, res) => {
     };
     // Upload the file to S3
     const result = await s3.upload(params).promise();
-
-    // Add the URL of the uploaded file to the array
-    //console.log("result => ", result);
 
     // Update the user's image and add the new image to the images array
     const user = await User.findByIdAndUpdate(
@@ -117,7 +111,7 @@ export const profileBackImageUpdate = async (req, res) => {
 
     // Set the bucket and file names for the S3 upload
     const params = {
-      Bucket: bucketName,
+      Bucket: process.env.BUCKET_NAME,
       Key: `ProfileBackgroundImage/${date.toISOString()}-${file.name}`, // fix: use file.name instead of files.name
       Body: fileBuffer,
       ContentType: file.mimetype, // fix: use file.mimetype instead of files.mimetype
@@ -188,7 +182,7 @@ export const uploadImages = async (req, res) => {
 
       // Set the bucket and file names for the S3 upload
       const params = {
-        Bucket: bucketName,
+        Bucket: process.env.BUCKET_NAME,
         Key: `Images/${date.toISOString()}-${file.name}`,
         Body: fileBuffer,
         ContentType: file.mimetype,
@@ -219,7 +213,7 @@ export const uploadImages = async (req, res) => {
     for (const image of uploadedImages) {
       // Set the bucket and file names for the S3 delete operation
       const params = {
-        Bucket: bucketName,
+        Bucket: process.env.BUCKET_NAME,
         Key: image.public_id, // Set the file name
       };
 
@@ -261,7 +255,7 @@ export const uploadVideos = async (req, res) => {
 
       // Set the bucket and file names for the S3 upload
       const params = {
-        Bucket: bucketName,
+        Bucket: process.env.BUCKET_NAME,
         Key: `Videos/${date.toISOString()}-${file.name}`,
         Body: fileBuffer,
         ContentType: file.mimetype,
@@ -300,7 +294,7 @@ export const uploadVideos = async (req, res) => {
     for (const video of uploadedVideos) {
       // Set the bucket and file names for the S3 delete operation
       const params = {
-        Bucket: bucketName,
+        Bucket: process.env.BUCKET_NAME,
         Key: video.public_id, // Set the file name
       };
 
@@ -341,7 +335,7 @@ export const uploadDocuments = async (req, res) => {
 
       // Set the bucket and file names for the S3 upload
       const params = {
-        Bucket: bucketName,
+        Bucket: process.env.BUCKET_NAME,
         Key: `Documents/${date.toISOString()}-${file.name}`,
         Body: fileBuffer,
         ContentType: file.mimetype,
@@ -373,7 +367,7 @@ export const uploadDocuments = async (req, res) => {
     for (const document of uploadedDocuments) {
       // Set the bucket and file names for the S3 delete operation
       const params = {
-        Bucket: bucketName,
+        Bucket: process.env.BUCKET_NAME,
         Key: document.public_id, // Set the file name
       };
 
@@ -412,14 +406,14 @@ export const deletePost = async (req, res) => {
     if (fileType === "image") {
       try {
         for (const image of post.images) {
-          // Set the bucket and file names for the S3 delete operation
-          const params = {
-            Bucket: bucketName,
-            Key: image.public_id, // Set the file name
-          };
-
-          // Delete the file from S3
-          await s3.deleteObject(params).promise();
+          // Check if this is the image that needs to be deleted
+          if (image.shouldDelete) {
+            const params = {
+              Bucket: process.env.BUCKET_NAME,
+              Key: image.url,
+            };
+            await s3.deleteObject(params).promise();
+          }
         }
       } catch (err) {
         console.log(err);
@@ -429,8 +423,8 @@ export const deletePost = async (req, res) => {
         for (const document of post.documents) {
           // Set the bucket and file names for the S3 delete operation
           const params = {
-            Bucket: bucketName,
-            Key: document.public_id, // Set the file name
+            Bucket: process.env.BUCKET_NAME,
+            Key: document.url, // Set the file name
           };
 
           // Delete the file from S3
@@ -444,8 +438,8 @@ export const deletePost = async (req, res) => {
         for (const video of post.videos) {
           // Set the bucket and file names for the S3 delete operation
           const params = {
-            Bucket: bucketName,
-            Key: video.public_id, // Set the file name
+            Bucket: process.env.BUCKET_NAME,
+            Key: video.url, // Set the file name
           };
 
           // Delete the file from S3
@@ -461,5 +455,97 @@ export const deletePost = async (req, res) => {
   } catch (err) {
     res.json({ error: err });
     console.log(err);
+  }
+};
+
+
+/* gallery files delete */
+export const gallerydeleteFile = async (req, res) => {
+  //console.log(req.body);
+  try {
+    const { fileId, fileType } = req.body;
+    //console.log(fileId, fileType);
+
+    if (!fileType || !fileId) {
+      return res.json({
+        error: "filetype and id required",
+      });
+    }
+
+    const user = await User.findById({ _id: req.user._id });
+    //console.log("user => ", user);
+
+    if (fileType === "profileImg") {
+      for (let i = 0; i < user.images.length; i++) {
+        // Set the bucket and file names for the S3 delete operation
+        //console.log(user.image.public_id)
+        if (
+          user.images[i].public_id === fileId &&
+          user.image.public_id === fileId
+        ) {
+          const filter = { _id: user._id };
+          const update = { $pull: { images: { public_id: fileId } } };
+          await User.findOneAndUpdate(filter, update);
+
+          await User.findByIdAndUpdate(user._id, {
+            $unset: { image: user.image.public_id },
+          });
+
+          try {
+            const params = {
+              Bucket: process.env.BUCKET_NAME,
+              Key: user.images[i].public_id, // Set the file name
+            };
+
+            // Delete the file from S3
+            await s3.deleteObject(params).promise();
+          } catch (err) {
+            console.log(err);
+          }
+        } else if (user.images[i].public_id === fileId) {
+          const filter = { _id: user._id };
+          const update = { $pull: { images: { public_id: fileId } } };
+          await User.findOneAndUpdate(filter, update);
+
+          try {
+            const params = {
+              Bucket: process.env.BUCKET_NAME,
+              Key: user.images[i].public_id, // Set the file name
+            };
+
+            // Delete the file from S3
+            await s3.deleteObject(params).promise();
+          } catch (err) {
+            console.log(err);
+          }
+        }
+      }
+    } else if (fileType === "profileBackImg") {
+      try {
+        for (let i = 0; i < user.back_images.length; i++) {
+          // Set the bucket and file names for the S3 delete operation
+          if (user.back_images[i].public_id === fileId) {
+            const params = {
+              Bucket: process.env.BUCKET_NAME,
+              Key: user.back_images[i].public_id, // Set the file name
+            };
+
+            // Delete the file from S3
+            await s3.deleteObject(params).promise();
+          }
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    } else {
+      return res.json({
+        error: "error",
+      });
+    }
+    res.json({ status: "ok", message: "successfully file deleted" });
+  } catch (err) {
+    return res.json({
+      error: err,
+    });
   }
 };

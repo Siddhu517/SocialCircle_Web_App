@@ -1,12 +1,12 @@
 .left-container {
-  height: 32.2rem;
-  width: 22rem;
+  position: fixed;
+  top: 55px;
+  width: 17rem;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  /* border: 2px solid red; */
-  padding: 1rem;
+  justify-content:center;
+  align-items:flex-start;
+  margin: 1rem;
 }
 
 .left-container .FriendsDetails {
@@ -15,8 +15,8 @@
   justify-content: center;
   align-items: flex-start;
   height: 15rem;
-  margin-bottom: 0.7rem;
-  width: 20rem;
+  margin-bottom: 1rem;
+  width: 17rem;
   background-color: rgb(225, 221, 219);
 }
 
@@ -25,7 +25,7 @@
   justify-content: space-around;
   align-items: center;
   height: 12.4rem;
-  width: 20rem;
+  width: 17rem;
   background-color: rgb(174, 172, 171);
 }
 
@@ -36,7 +36,6 @@
   justify-content: center;
   align-items: center;
   height: 12.4rem;
-  width: 10rem;
   padding: 0;
 }
 
@@ -51,7 +50,7 @@
   justify-content: center;
   align-items: center;
   height: 45px;
-  width: 20rem;
+  width: 17rem;
   font-size: 15px;
   font-weight: 500;
   overflow: hidden;
@@ -87,19 +86,20 @@
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  height: 13rem;
-  width: 20rem;
+  height: 13.7rem;
+  width: 17rem;
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
 
 .left-container .friendDetailsDisplay {
   height: 50px;
-  width: 20rem;
+  width: 17rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: aquamarine;
+  
 }
 
 
@@ -108,14 +108,15 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  min-height: 50px;
+  min-height: 40px;
   max-height: 100%;
-  width: 20rem;
+  width: 17rem;
   margin: 0.5rem 0;
   border-radius: 10px;
   background-color: rgb(222, 232, 232);
   font-weight: 500;
   overflow: hidden;
+ 
 }
 
 .left-container .friendDetailsDisplay .text {

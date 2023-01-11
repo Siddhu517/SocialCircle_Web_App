@@ -2,11 +2,15 @@
   display: flex;
   justify-content: center;
   align-items: start;
-  max-height: 690px;
-  width: 39rem;
+  min-height: 690px;
+  max-height: 100%;
+  width: 60rem;
+  margin: 51px -1rem 0 -1rem;
+  padding: 0 1rem;
   overflow-y: scroll;
   scroll-behavior: smooth;
   cursor: move;
+  /* border: 2px solid rgb(8, 233, 87); */
 }
 
 .posts {
@@ -86,4 +90,3 @@
   font-size: small;
   font-weight: 500;
 }
-

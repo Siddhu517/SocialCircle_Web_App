@@ -1,6 +1,7 @@
 .right-friend-section {
-  height: 32.2rem;
-  width: 20.2rem;
+  position: fixed;
+  top: 55px;
+  width: 17rem;
   display: flex;
   justify-content: start;
   align-items: center;

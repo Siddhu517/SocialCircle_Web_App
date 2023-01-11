@@ -33,14 +33,8 @@ const userSchema = new Schema(
       url: String,
       public_id: String,
     },
-    back_images: {
-      url: String,
-      public_id: String,
-    },
-    images: {
-      url: String,
-      public_id: String,
-    },
+    back_images: [],
+    images: [],
     contact: {
       type: Number,
     },
@@ -80,6 +74,15 @@ const userSchema = new Schema(
     },
     following: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
     followers: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+    contactUs: [
+      {
+        createdAt: { type: Date, default: Date.now },
+        name: { type: String },
+        email: { type: String },
+        contact: { type: String },
+        message: { type: String },
+      },
+    ],
   },
   {
     timestamps: true,

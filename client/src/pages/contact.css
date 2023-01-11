@@ -1,0 +1,53 @@
+.contact-container {
+  height: 100%;
+  width: 100%;
+  border: 1px solid red;
+}
+
+.contact-container .contactForm {
+  position: fixed;
+  top: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 690px;
+  background-color: #002853;
+}
+
+.contact-container .contactForm .card {
+  margin: 5rem 0 0 0;
+  height: 22rem;
+  width: 40rem;
+}
+
+.contact-container .contactForm .card .form-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.contact-container .contactForm .card .form-group label {
+  position: absolute;
+  left: 6rem;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.contact-container .contactForm .card .form-group input {
+  height: 35px;
+  width: 17rem;
+  margin-left: 50px;
+  border: 2px solid red;
+  border-radius: 10px;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+.contact-container .contactForm .card .form-group textarea {
+  height: 5.5rem;
+  width: 17rem;
+  border: 2px solid red;
+  border-radius: 10px;
+  padding: 0 10px;
+}

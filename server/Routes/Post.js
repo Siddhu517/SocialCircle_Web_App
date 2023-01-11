@@ -39,6 +39,7 @@ import {
   deletePost,
   profileImageUpdate,
   profileBackImageUpdate,
+  gallerydeleteFile,
 } from "../Controllers/awsPost";
 
 /* create  */
@@ -83,8 +84,6 @@ router.post(
   profileBackImageUpdate
 );
 
-
-
 router.get("/news-feed/:id", requireSignin, newsFeed);
 
 router.put("/create-comment", requireSignin, createComment);
@@ -111,6 +110,9 @@ router.get("/posted-all-videos", requireSignin, getPostedVideos);
 router.get("/posted-all-documents", requireSignin, getPostedDocuments);
 
 //friends posts
-router.get("/friend-posts/:username", getPostsFriends);
+router.get("/friend-posts/:username", requireSignin, getPostsFriends);
+
+//gallery delete profile/profileback images
+router.delete("/gallery/delete-file", requireSignin, gallerydeleteFile);
 
 export default router;

@@ -36,12 +36,20 @@ const Friends = () => {
   }, []);
 
   return (
-    <div className="friends-container">
-      <Navbar display="hidden" />
-      <div className="friendSection">
-        <FLeft user={user} />
-        <Posts posts={posts} />
-        <FRight username={username} user={user} />
+    <div className="container-fluid friends-container">
+      <div className="row">
+        <Navbar display="hidden" />
+      </div>
+      <div className="row d-flex justify-content-center align-items-center">
+        <div className="col LfriendSec">
+          <FLeft user={user} />
+        </div>
+        <div className="col MfriendSec">
+          <Posts posts={posts} />
+        </div>
+        <div className="col RfriendSec">
+          <FRight username={username} user={user} />
+        </div>
       </div>
     </div>
   );

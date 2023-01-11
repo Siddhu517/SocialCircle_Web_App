@@ -3,6 +3,7 @@ import "./style.css";
 import { Link } from "react-router-dom";
 
 const AuthForm = ({
+  isLoading,
   enterOTP,
   page,
   setPage,
@@ -191,7 +192,18 @@ const AuthForm = ({
       )}
       <div className="form-group mt-4 ">
         <div class="btn-group w-100" role="group" aria-label="Basic example">
-          <button type="submit" class="btn btn-primary w-75">
+          <button
+            type="submit"
+            class="btn btn-primary w-75"
+            disabled={isLoading}
+          >
+            {isLoading ? (
+              <span
+                className="spinner-border spinner-border-sm me-3 fs-4"
+                role="status"
+                aria-hidden="true"
+              ></span>
+            ) : null}
             Submit
           </button>
           <button type="button" class="btn btn-danger w-25" onClick={clearData}>
@@ -201,7 +213,12 @@ const AuthForm = ({
       </div>
       {(page === "Login" || page === "Register") && (
         <div className="form-group">
-          <button style={{visibility:"hidden"}} className="btn btn-success w-100">Google</button>
+          <button
+            style={{ visibility: "hidden" }}
+            className="btn btn-success w-100"
+          >
+            Google
+          </button>
         </div>
       )}
     </form>
