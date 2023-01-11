@@ -5,13 +5,13 @@
 }
 
 /* Media query for devices with a width of 1024px or more */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1224px) {
   .Home-Container .Right-container {
-    display: none;
+    visibility:hidden;
   }
 
   .Home-Container .Left-container {
-    display: none;
+    visibility:hidden;
   }
 }
 
