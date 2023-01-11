@@ -15,7 +15,7 @@ const Navbar = ({ display }) => {
       try {
         const searchData = { search };
         const res = await searchUser(searchData);
-        console.log(res.data);
+        //console.log(res.data);
         setRecommendations(res.data);
       } catch (err) {
         console.log(err);

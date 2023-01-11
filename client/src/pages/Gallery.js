@@ -65,7 +65,7 @@ const Gallery = () => {
     const videos = [];
     setViewSection("Videos");
     const { data } = await getPostedVideos();
-    console.log(data);
+    //console.log(data);
 
     for (let i = 0; i < data.length; i++) {
       for (let j = 0; j < data[i].videos.length; j++) {

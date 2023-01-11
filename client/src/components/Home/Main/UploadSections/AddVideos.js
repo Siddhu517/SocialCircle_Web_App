@@ -175,7 +175,7 @@ const AddVideos = ({ id, handleCreatePost }) => {
                       defaultValue={"public"}
                       onChange={(e) => setPostBy(e.target.value)}
                     >
-                      <option selected className="" value="public">
+                      <option className="" value="public">
                         Public
                       </option>
                       <option value="friends">Friends</option>
@@ -255,7 +255,7 @@ const AddVideos = ({ id, handleCreatePost }) => {
               </div>
             </div>
             <div className="modal-footer d-flex justify-content-center align-items-center">
-              <div class="btn-group w-100">
+              <div className="btn-group w-100">
                 <button
                   onClick={SubmitPostServer}
                   className="btn btn-primary w-100"

@@ -165,9 +165,9 @@ const Home = () => {
   const handleNewsFeedAPI = async () => {
     try {
       await handleUpdateStateUser();
-      console.log("state => ", state.user._id);
+      //console.log("state => ", state.user._id);
       const { data } = await newsFeedAPI(state.user._id);
-      console.log(data);
+      //console.log(data);
       setPosts(data);
       return data;
     } catch (err) {
@@ -196,7 +196,7 @@ const Home = () => {
     const data = { id, commentId };
     try {
       if (!id || !commentId) {
-        console.log("id required");
+       // console.log("id required");
         return;
       }
       const res = await deleteCommentAPI(data);
@@ -213,7 +213,7 @@ const Home = () => {
     const data = { id, newComment, commentId };
     try {
       if (!id || !newComment || !commentId) {
-        console.log("error");
+        //console.log("error");
         return;
       }
 

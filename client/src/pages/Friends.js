@@ -27,7 +27,7 @@ const Friends = () => {
     const fetch = async () => {
       const pathname = window.location.pathname;
       const resPost = await friendPosts(String(pathname.slice(8)));
-      console.log("post => ", resPost.data);
+      //console.log("post => ", resPost.data);
       setPosts(resPost.data);
       const res = await friendDetails(String(pathname.slice(8)));
       setUser(res.data);

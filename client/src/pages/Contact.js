@@ -26,9 +26,9 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    console.log(formData);
+    //console.log(formData);
     const res = await contactFormSubmit(formData);
-    console.log(res);
+    //console.log(res);
     if (res.data.status !== "ok") {
       toast.error(res.data.error);
       setIsLoading(false);

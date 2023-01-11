@@ -12,7 +12,7 @@ const AddImages = ({ id, handleCreatePost }) => {
   const [content, setContent] = useState("");
   const [postBy, setPostBy] = useState("");
 
-  console.log(postBy);
+  //console.log(postBy);
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -113,7 +113,7 @@ const AddImages = ({ id, handleCreatePost }) => {
     const file_type = "image";
 
     const postData = { content, resFiles, file_type, postBy };
-    console.log("post uploads =>", postData);
+    //console.log("post uploads =>", postData);
 
     try {
       //const res = await createPost(postData);
@@ -175,7 +175,7 @@ const AddImages = ({ id, handleCreatePost }) => {
                       defaultValue={"public"}
                       onChange={(e) => setPostBy(e.target.value)}
                     >
-                      <option selected className="" value="public">
+                      <option  className="" value="public">
                         Public
                       </option>
                       <option value="friends">Friends</option>
@@ -256,7 +256,7 @@ const AddImages = ({ id, handleCreatePost }) => {
               </div>
             </div>
             <div className="modal-footer d-flex justify-content-center align-items-center">
-              <div class="btn-group w-100">
+              <div className="btn-group w-100">
                 <button
                   onClick={SubmitPostServer}
                   className="btn btn-primary w-100"
