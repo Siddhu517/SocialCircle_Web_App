@@ -663,3 +663,16 @@ export const searchUser = async (req, res) => {
     console.log(err);
   }
 };
+
+/* delete user */
+export const deleteUser = async (req, res) => {
+  try {
+    const user = await User.findByIdAndDelete({ _id: req.user._id });
+    res.json({
+      status: "ok",
+      message: `Successfully ${user.username} Account deleted`,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};

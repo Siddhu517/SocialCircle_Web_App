@@ -67,7 +67,12 @@ const CardFooter = ({
             <span className="ms-2">Like</span>
           </div>
         ) : (
-          <div className="like" onClick={() => handleLikePostAPI(post._id)}>
+          <div
+            className="like"
+            onClick={() => {
+              handleLikePostAPI(post._id);
+            }}
+          >
             <ion-icon
               name="thumbs-up-sharp"
               style={{ color: "red" }}

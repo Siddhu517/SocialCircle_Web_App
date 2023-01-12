@@ -222,3 +222,12 @@ export const gallerydeleteFile = async (fileId, fileType) => {
     console.log(err);
   }
 };
+
+/* setting page user account delete */
+export const deleteUserApi = async () => {
+  try {
+    return await axios.delete(`/delete-user`);
+  } catch (err) {
+    console.log(err);
+  }
+};

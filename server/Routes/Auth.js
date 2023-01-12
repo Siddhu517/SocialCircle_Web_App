@@ -29,6 +29,7 @@ import {
   friendFollowing,
   findPeopleFriend,
   contactForm,
+  deleteUser,
 } from "../Controllers/auth";
 
 router.post("/register", register);
@@ -61,5 +62,8 @@ router.get("/find-people/:username", requireSignin, findPeopleFriend);
 
 /* contact us form */
 router.post("/contact", requireSignin, contactForm);
+
+/* delete user */
+router.delete("/delete-user", requireSignin, deleteUser);
 
 export default router;
