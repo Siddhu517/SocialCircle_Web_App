@@ -38,16 +38,19 @@ const Gallery = () => {
   };
 
   const clickProfileImages = () => {
+    setPosts([])
     setViewSection("ProfileImg");
     setPosts(state.user.images);
   };
 
   const clickProfileBackImage = () => {
+    setPosts([])
     setViewSection("ProfileBackImg");
     setPosts(state.user.back_images);
   };
 
   const clickPostImages = async () => {
+    setPosts([])
     const images = [];
     setViewSection("Images");
     const { data } = await getPostedImages();
@@ -62,6 +65,7 @@ const Gallery = () => {
   };
 
   const clickPostVideos = async () => {
+    setPosts([])
     const videos = [];
     setViewSection("Videos");
     const { data } = await getPostedVideos();
@@ -77,6 +81,7 @@ const Gallery = () => {
   };
 
   const clickPostDocuments = async () => {
+    setPosts([])
     const documents = [];
     setViewSection("Docs");
     const { data } = await getPostedDocuments();

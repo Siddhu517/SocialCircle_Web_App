@@ -237,9 +237,8 @@ const handleSendEmail = async (email, otp) => {
     html: `<p>Your OTP is <strong>${otp}</strong></p>`,
   });
 
- // console.log(`Message sent: %s `, info.messageId);
+  // console.log(`Message sent: %s `, info.messageId);
 };
-
 
 /* contact form submit */
 
@@ -318,6 +317,7 @@ export const contactForm = async (req, res) => {
 export const currentUser = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
+    user.password = undefined;
     res.json({ user: user });
   } catch (err) {
     console.log(err);
