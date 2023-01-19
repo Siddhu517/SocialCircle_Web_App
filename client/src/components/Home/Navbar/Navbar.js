@@ -34,7 +34,7 @@ const Navbar = ({ display }) => {
       window.localStorage.removeItem("auth");
       setState(null);
       toast.success("Logout successfully");
-      window.navigator = "/login";
+      window.location = "/login";
     }
   };
 

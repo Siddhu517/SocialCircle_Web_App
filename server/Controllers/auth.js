@@ -1,4 +1,5 @@
 import User from "../Models/user";
+import Post from "../Models/post";
 import { hashPassword, comparePassword } from "../helpers/auth";
 import jwt from "jsonwebtoken";
 import nodemailer from "nodemailer";
@@ -88,7 +89,7 @@ export const login = async (req, res) => {
     const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "7d",
     });
-    user.password = undefined;
+    /* user.password = undefined; */
 
     res.json({
       token,
@@ -427,7 +428,7 @@ export const profileUpdate = async (req, res) => {
 
     let user = await User.findByIdAndUpdate(req.user._id, data, { new: true });
     //console.log("updated user ", user);
-    user.password = undefined;
+   /*  user.password = undefined; */
     res.json({
       message: "Successfully Profile Updated",
       status: "ok",
@@ -493,7 +494,7 @@ export const userFollow = async (req, res) => {
       { new: true }
     ).select("-password");
 
-    user.password = undefined;
+    /* user.password = undefined; */
 
     const friend = await User.findById(req.body.id);
     res.json({
@@ -564,7 +565,7 @@ export const friendDetails = async (req, res) => {
         error: "user not found",
       });
     }
-    user.password = undefined;
+  /*   user.password = undefined; */
     res.json(user);
   } catch (err) {
     console.log(err);
@@ -668,6 +669,8 @@ export const searchUser = async (req, res) => {
 export const deleteUser = async (req, res) => {
   try {
     const user = await User.findByIdAndDelete({ _id: req.user._id });
+    // const post = await Post.findOneAndDelete({ postedBy: req.user._id });
+
     res.json({
       status: "ok",
       message: `Successfully ${user.username} Account deleted`,
